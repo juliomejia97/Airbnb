@@ -17,3 +17,8 @@ jobs:
     - run: ./gradlew assembleDebug -Dorg.gradle.logging.level=info
       working-directory: android
       name: Build Android apk (debug)
+      
+    - uses: actions/upload-artifact@v2
+      with:
+        name: android-apk
+        path: '**/*.apk'
