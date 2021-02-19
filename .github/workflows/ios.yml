@@ -1,4 +1,4 @@
-ame: iOS
+name: iOS
 on: [push, pull_request]
 jobs:
   build:
@@ -15,12 +15,4 @@ jobs:
       working-directory: ios
       name: Install pod dependencies
     - name: Build iOS (debug)
-      run: "xcodebuild \
-        -workspace ios/Airbnb.xcworkspace \
-        -scheme Airbnb \
-        clean archive \
-        -sdk iphoneos \
-        -configuration Debug \
-        -UseModernBuildSystem=NO \
-        -archivePath $PWD/Airbnb \
-        CODE_SIGNING_ALLOWED=NO"
+      run: "xcodebuild \ -workspace ios/Airbnb.xcworkspace \ -scheme Airbnb \ clean archive \ -sdk iphoneos \ -configuration Debug \ -UseModernBuildSystem=NO \ -archivePath $PWD/Airbnb \ CODE_SIGNING_ALLOWED=NO"
